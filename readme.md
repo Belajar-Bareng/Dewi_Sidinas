@@ -19,7 +19,7 @@ Daftar _bug_:
     - Bug tampilan footer halaman tambah kepala sekolah (1)
     - Jika Kode Gaji terdapat duplikasi secara tidak sengaja akan memunculkan error: `Duplicate entry 'kode-ngasal' for key 'instansi.PRIMARY'` (3)
     - Setelah menambahkan data kepala sekolah tidak langsung mengarah ke list kepala sekolah (1)
-    - Tidak bisa mengupdate Kode Gaji pada data kepala sekolah (1)
+    - ~~Tidak bisa mengupdate Kode Gaji pada data kepala sekolah (1)~~
     - ~~Halaman tambah surat masuk input berupa text, bukan inputan tanggal (1)~~
     - ~~Ketika menambahkan data surat masuk terdapat error: `Incorrect integer value: '' for column 'id_masuk' at row 1` (3)~~
     - Setelah menambahkan data surat masuk tidak langsung mengarah ke list surat masuk (1)

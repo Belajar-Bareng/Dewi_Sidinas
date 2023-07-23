@@ -59,6 +59,7 @@ $row =$hasil->fetch_assoc();
                   <div class="form-group">
                     <label for="kode_gaji">Kode Gaji</label>
                     <input type="kode_gaji"name="kode_gaji" class="form-control" id="kode_gaji" value="<?= $row['kode_gaji'] ?>">
+                    <input type="hidden" name="id_gaji" value="<?= $row['kode_gaji'] ?>" />
                   </div>
                   <div class="form-group">
                     <label for="nm_instansi">Nama Sekolah</label>
