@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-require_once 'templet/header.php';
-require_once  'templet/sidebar.php';
 include 'koneksi.php';
 
 if(isset($_POST["submit"])){
@@ -13,10 +11,25 @@ $kode_gaji = $_POST["kode_gaji"];
 $nm_instansi = $_POST["nm_instansi"];
 $nm_pegawai = $_POST["nm_pegawai"];
 $nm_admin = $_POST["nm_admin"];
-$file = '';
+$file = "";
 $status = $_POST["status"];
 
-if ($_FILES['file']) {
+// cek apakah ada file yang diupload
+if ($_FILES['file']['size'] > 0) {
+  // mengambil ukuran gambar dari file yang diupload
+  $info = getimagesize($_FILES['file']['tmp_name']);
+  if ($info === FALSE) {
+    header('location: ?error=Unable to determine image type of uploaded file');
+    exit;
+  }
+
+  // hanya memperbolehkan gif/jpeg/png
+  if (($info[2] !== IMAGETYPE_GIF) && ($info[2] !== IMAGETYPE_JPEG) && ($info[2] !== IMAGETYPE_PNG)) {
+    header("location: ?error=Not a gif/jpeg/png");
+    exit;
+  }
+
+  // menyimpan file yang diupload ke penyimpanan aplikasi dan menyimpan path-nya
   try {
     $storage_dir = 'tmp/';
     $file = $storage_dir . basename($_FILES['file']['name']);
@@ -37,6 +50,9 @@ VALUES
 mysqli_query($koneksi,$query);
 
 }
+
+require_once 'templet/header.php';
+require_once  'templet/sidebar.php';
 
 ?>
 
@@ -73,8 +89,12 @@ mysqli_query($koneksi,$query);
               <!-- /.card-header -->
               <!-- form start -->
               <form action="" method="post" enctype="multipart/form-data">
-
-              <div class="card-body">
+                
+                <div class="card-body">
+                
+                  <?php if(isset($_GET['error'])): ?>
+                  <div class="alert alert-danger" role="alert"><?= $_GET['error'] ?></div>
+                  <?php endif; ?>
                   <div class="form-group">
                     <label for="id_keluar">ID Keluar</label>
                     <input type="id_keluar" name="id_keluar" class="form-control" id="id_keluar" placeholder="" disabled>

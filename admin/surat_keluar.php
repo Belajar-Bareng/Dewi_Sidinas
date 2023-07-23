@@ -70,7 +70,13 @@ $hasil = $koneksi->query($query);
                     <td><?= $row["nm_instansi"]; ?></td>
                     <td><?= $row["nm_pegawai"]; ?></td>
                     <td><?= $row["nm_admin"]; ?></td>
-                    <td><img src="/<?= $row["file"]; ?>" width="50"></td>
+                    <td>
+                      <?php if($row['file']) : ?>
+                        <img src="/<?= $row["file"]; ?>" width="50" />
+                      <?php else: ?>
+                        -
+                      <?php endif; ?>
+                    </td>
                     <td width="10%" class="text-center">
                       <a class ="btn-success">Diterima</a>
                     </td>
