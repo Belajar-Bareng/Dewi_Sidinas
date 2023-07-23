@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'templet/header.php';
 require_once  'templet/sidebar.php';
 include 'koneksi.php';
