@@ -76,7 +76,11 @@ $hasil = $koneksi->query($query);
                       <?php endif; ?>
                     </td>
                     <td width="10%" class="text-center">
-                      <a class ="btn btn-success">Diterima</a>
+                      <?php if(strtolower($row['status']) == 'diterima'): ?>
+                        <span class="badge badge-success"><?= $row['status'] ?></span>
+                      <?php else: ?>
+                        <span class="badge badge-warning"><?= $row['status'] ?></span>
+                      <?php endif; ?>
                     </td>
                     <td width="20%" class="text-center">
                     <a href="cetak_surat_keluar.php "class="btn btn-warning"><i class='fas fa-edit mr-1'></i>cetak</a>
