@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'templet/header.php';
 require_once  'templet/sidebar.php';
 include 'koneksi.php';
@@ -11,13 +13,25 @@ $kode_gaji = $_POST["kode_gaji"];
 $nm_instansi = $_POST["nm_instansi"];
 $nm_pegawai = $_POST["nm_pegawai"];
 $nm_admin = $_POST["nm_admin"];
-$file = $_POST["file"];
+$file = '';
 $status = $_POST["status"];
+
+if ($_FILES['file']) {
+  try {
+    $storage_dir = 'tmp/';
+    $file = $storage_dir . basename($_FILES['file']['name']);
+    move_uploaded_file($_FILES['file']['tmp_name'], '../' . $file);
+  } catch (\Throwable $th) {
+    var_dump($th->getMessage());
+    exit;
+  }
+}
+
 
 //membuat query insert data
 $query = "INSERT INTO surat_keluar
 VALUES
-('','$tanggal', '$kode_gaji', '$nm_instansi', '$nm_pegawai', '$nm_admin', '$file', '$status')";
+(null, '$tanggal', '$kode_gaji', '$nm_instansi', '$nm_pegawai', '$nm_admin', '$file', '$status')";
 
 //eksekusi Query
 mysqli_query($koneksi,$query);
@@ -58,7 +72,7 @@ mysqli_query($koneksi,$query);
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="" method="post">
+              <form action="" method="post" enctype="multipart/form-data">
 
               <div class="card-body">
                   <div class="form-group">

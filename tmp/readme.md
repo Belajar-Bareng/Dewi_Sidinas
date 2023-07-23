@@ -1,0 +1,1 @@
+Ini adalah folder untuk menyimpan file/berkas. Jangan dihapus!
