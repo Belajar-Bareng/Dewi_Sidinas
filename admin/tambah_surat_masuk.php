@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'templet/header.php';
 require_once  'templet/sidebar.php';
 include 'koneksi.php';
@@ -67,7 +69,7 @@ mysqli_query($koneksi,$query);
                   <div class="form-group">
                     <label for="tanggal">Tanggal</label>
                     <div class="input-group-prepend"><span class="input-group-text"><i class="fa-solid fa-calender-days" style="color: #000000;"></i></span>
-                    <input type="text" class="form-control datepicker" name="tanggal" placeholder="tahun/bulan/tanggal" required>
+                    <input type="date" class="form-control datepicker" name="tanggal" placeholder="tahun/bulan/tanggal" required>
                   </div>
                   </div>
                   <div class="form-group">
