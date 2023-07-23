@@ -1,3 +1,19 @@
+<?php
+try {
+  if (isset($_SESSION['loggedIn']) && isset($_SESSION['role'])) {
+    if ($_SESSION['role'] != 'kasubag') {
+      header('location: ../../../index.php');
+      exit;
+    }
+  } else {
+    header('location: ../../../index.php');
+    exit;
+  }
+} catch (\Throwable $th) {
+  //throw $th;
+}
+?>
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
