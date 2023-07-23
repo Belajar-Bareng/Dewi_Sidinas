@@ -1,4 +1,7 @@
 <?php
+// perlu tetap menyalakan session agar pengecekan di template header bisa dijalankan
+session_start();
+
 require_once 'templet/header.php';
 require_once  'templet/sidebar.php';
 include 'koneksi.php';
@@ -76,7 +79,7 @@ VALUES ('".$id_user."','".$nm_user."','".$username."','".$password."','".$tgl_la
                   </div>
                   <div class="form-group">
                     <label for="tgl_lahir">Tanggal Lahir</label>
-                    <input type="tgl_lahir" name="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="">
+                    <input type="date" name="tgl_lahir" class="form-control" id="tgl_lahir" placeholder="">
                     </div>
                     <div class="form-group">
                     <label for="jenkel">jenkel</label>
