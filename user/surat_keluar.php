@@ -83,8 +83,7 @@ $hasil = $koneksi->query($query);
                       <?php endif; ?>
                     </td>
                     <td width="20%" class="text-center">
-                    <a href="cetak_surat_keluar.php "class="btn btn-warning"><i class='fas fa-edit mr-1'></i>cetak</a>
-                    
+                    <a href="cetak_surat_keluar.php?id=<?= $row['id_keluar'] ?>" class="btn btn-warning"><i class='fas fa-edit mr-1'></i>cetak</a>
                   </td>
                   </tr>
                   <?php $id_keluar++ ; ?>
