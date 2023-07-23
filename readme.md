@@ -37,5 +37,16 @@ Daftar _bug_:
     - Ketika menambahkan data pengumuman terdapat error: `Incorrect integer value: '' for column 'id_pengumuman' at row 1` (3)
     - Halaman tambah pengumuman pada bagian tanggal berupa text, bukan inputan tanggal (1)
     - Setelah menambahkan data pengumuman tidak langsung mengarah ke list pengumuman (1)
-
+- Menu User:
+    - Menu Sidebar aktif tidak sesuai halaman (5)
+    - Tidak ada halaman logout (3)
+    - Bug tampilan daftar surat keluar pada kolom gambar (1)
+    - Tombol `Diterima` pada surat keluar tidak bekerja (3)
+    - Tombol `Cetak` pada surat keluar tidak bekerja (5)
+- Menu Kasubag:
+    - Menu Sidebar aktif tidak sesuai halaman (5)
+    - Tidak ada halaman logout (3)
+    - Tombol `Diperiksa` pada surat masuk tidak bekerja (3)
+    - Bug tampilan daftar surat keluar pada kolom gambar (1)
+    - Tombol `Diperiksa` pada surat keluar tidak bekerja (3)
 
