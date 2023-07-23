@@ -1,6 +1,6 @@
 <?php 
    session_start();
-   if (!isset($_SESSION['username']) && !isset($_SESSION['id'])) {   ?>
+   if (!isset($_SESSION['loggedIn']) && !isset($_SESSION['role'])) {   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,5 +68,6 @@
 </body>
 </html>
 <?php }else{
-	header("Location: home.php");
+	// akan diarahkan ke entry point jika sudah login atau session masih ada
+	header("Location: ../index.php");
 } ?>
