@@ -18,7 +18,7 @@ $status = $_POST["status"];
 //membuat query insert data
 $query = "INSERT INTO surat_masuk
 VALUES
-('','$tanggal', '$kode_gaji', '$nm_instansi', '$nm_admin', '$nm_pengantar', '$status')";
+(null,'$tanggal', '$kode_gaji', '$nm_instansi', '$nm_admin', '$nm_pengantar', '$status')";
 
 //eksekusi Query
 mysqli_query($koneksi,$query);
